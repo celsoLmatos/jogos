@@ -9,12 +9,16 @@ print('###############################################')
 
 arquivo = open('charada.txt','r').readlines()
 perguntas = [linha.strip().split('-') for linha in arquivo]
-charada = choice(perguntas)
+
+def escolhe_charada(perguntas):
+    charada = choice(perguntas)
+    return charada
 
 def jogar():
     tentativas = 3
     ganhou = 0
     rodadas = len(perguntas)
+    charada = escolhe_charada(perguntas)
     while(tentativas > 0):
         print(charada[0])
         resposta = input('QUAL A RESPOSTA? (RESPOSTA EM INTEIRO ):  ')
@@ -22,12 +26,14 @@ def jogar():
             print('VOCÊ ACERTOU !!!!')
             print('VAMOS PARA PROXIMA PERGUNTA !!!!')
             tentativas = 3
+            rodadas -= 1
+            charada = escolhe_charada(perguntas)
         else:
             tentativas = tentativas - 1
             print('VOCÊ ERROU !!!!')
             print('VOCÊ AINDA TEM',tentativas,'CHANCES !!!')
 
-        if rodadas < 1:
+        if rodadas < 0:
             print('AS PERGUNTAS ACABARAM VOCÊ É O VENCEDOR PARABENS !!!!')
             ganhou = 1
             tentativas = 0

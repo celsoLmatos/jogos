@@ -1,5 +1,5 @@
-import json
-import random
+# import json
+# import random
 
 # teste = 'O 246º MELHOR DA SUA TURMA'
 # teste1 = teste.split(' ')
@@ -20,7 +20,7 @@ import random
 # for aluno in alunos:
 #     print(aluno['posicao'])
 
-
+#
 # teste = ['b', 'a', 'g', 'e', 'c', 'f','d']
 # print(teste)
 # posi = [[indice+1, valor] for indice, valor in enumerate(teste)]
@@ -28,6 +28,7 @@ import random
 # posi.sort(key = (lambda x: x[1]))
 # ordenanacao = [x[0] for x in posi]
 # print(ordenanacao)
+
 
 
 
